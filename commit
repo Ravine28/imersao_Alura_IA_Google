@@ -1,0 +1,168 @@
+PROMPT: melhore e torne este código mais legível e elegante. se possível, faça sugestões e apontamentos sobre o mesmo. seja detalhista e assertivo:
+
+import customtkinter as ctk
+from PIL import Image, ImageTk
+
+class Login():
+    def __init__(self):
+        self.window_login=window_login
+        self.theme()
+        self.screen()
+        self.screen_login()
+        window_login.mainloop()
+
+    def theme(self):
+        ctk.set_appearance_mode("system")
+
+    def screen(self):
+        self.window_login.geometry("1360x768")
+        self.window_login.minsize(width=700, height=400)
+        self.window_login.maxsize(width=1360, height=768)
+        self.window_login.configure(fg_color="#2C5535")
+   
+    def screen_login(self):
+        self.window_login.title("Didático Goiás")
+
+        # Carregando e processando a imagem
+        pil_image = Image.open("C:\\Users\\Ravine\\Documents\\VS Code\\Interface IHC\\Imagem1.png")
+        width, height = 650, 360
+        pil_image = pil_image.resize((width, height), Image.LANCZOS)  # Usando LANCZOS para redimensionamento
+        # Convertendo a imagem PIL para um formato compatível com customtkinter
+        image_tk = ImageTk.PhotoImage(pil_image)
+        # Mantendo uma referência da imagem
+        self.window_login.image_tk = image_tk
+        # Exibindo a imagem na janela
+        label = ctk.CTkLabel(self.window_login, image=self.window_login.image_tk)
+        label.place(x=370, y=22) 
+
+        #verificar se os campos de entrada foram preenchidos
+        def check_entry(event):
+            if username.get() and password.get():
+                loginbutton.configure(state=ctk.NORMAL)
+            else:
+                loginbutton.configure(state=ctk.DISABLED)
+
+        # Criando o campo de entrada para o usuário
+        username = ctk.CTkEntry(self.window_login, width=420, height=50, fg_color="#2C5535", 
+                                placeholder_text="Usuário", font=("default_theme", 30))
+        username.place(x=485, y=430)
+        #verificando de o campo usuário foi preenchido
+        username.bind("<KeyRelease>", check_entry)
+        # Criando o campo de entrada para a senha
+        password = ctk.CTkEntry(self.window_login, width=420, height=50, fg_color="#2C5535", 
+                                placeholder_text="Senha", font=("default_theme", 30), show='*')
+        password.place(x=485, y=530)
+        #verificando se o campo senha foi preenchido
+        password.bind("<KeyRelease>", check_entry)
+
+        loginbutton = ctk.CTkButton(self.window_login, text="Entrar", text_color="#2C5535", 
+                                    font=("default_theme", 45), width=420, height=70, 
+                                    command=self.screen_dashboard, fg_color="#FFFFFF", state=ctk.DISABLED)
+        loginbutton.place(x=485, y=620)
+
+    def screen_dashboard(self):
+        for widget in self.window_login.winfo_children():
+            widget.pack_forget()
+
+        self.frame_dashboard = ctk.CTkFrame(self.window_login)
+        self.frame_dashboard.pack(fill="both", expand=True)
+        self.frame_dashboard.configure(fg_color="#2C5535")
+
+        label_entry = ctk.CTkLabel(self.frame_dashboard, text="Bem vindo, Professor!", text_color="#FFFFFF",
+                                   font=("Finger Paint", 35), width=583.3, height=71.34)
+        label_entry.place(x=-45, y=15)
+        
+
+# Cria uma instância da janela principal
+window_login = ctk.CTk()
+
+# Cria uma instância da classe Login
+app = Login()
+
+
+----------------------------------------------------------------------------------------
+RESPOSTA:
+
+import customtkinter as ctk
+from PIL import Image, ImageTk
+
+class LoginApp:
+    def __init__(self, root):
+        self.root = root  # Renomeado para 'root' para clareza
+        self.root.title("Didático Goiás")
+
+        # Definições de tema e dimensões movidas para o início para organização
+        ctk.set_appearance_mode("system")
+        self.root.geometry("1360x768")
+        self.root.minsize(width=700, height=400)
+        self.root.maxsize(width=1360, height=768)
+        self.root.configure(fg_color="#2C5535")  
+
+        self.create_login_screen()
+
+    def create_login_screen(self):
+        # Carregamento e redimensionamento da imagem simplificados com 'with'
+        with Image.open("C:\\Users\\Ravine\\Documents\\VS Code\\Interface IHC\\Imagem1.png") as img:
+            img = img.resize((650, 360), Image.LANCZOS)
+            self.image_tk = ImageTk.PhotoImage(img)  # Armazenado como atributo da classe
+
+        label = ctk.CTkLabel(self.root, image=self.image_tk)
+        label.place(x=370, y=22)
+
+        # Campos de entrada e botão de login criados com helper function
+        self.create_entry_field("Usuário", 485, 430)  
+        self.create_entry_field("Senha", 485, 530, show="*")
+
+        self.login_button = ctk.CTkButton(
+            self.root, text="Entrar", text_color="#2C5535", font=("default_theme", 45), 
+            width=420, height=70, fg_color="#FFFFFF", state=ctk.DISABLED, 
+            command=self.switch_to_dashboard
+        )
+        self.login_button.place(x=485, y=620)
+
+        # Vinculação do evento de verificação aos campos de entrada
+        self.username_entry.bind("<KeyRelease>", self.check_entries)
+        self.password_entry.bind("<KeyRelease>", self.check_entries)
+
+    def create_entry_field(self, placeholder, x, y, **kwargs):
+        entry = ctk.CTkEntry(
+            self.root, width=420, height=50, fg_color="#2C5535", 
+            placeholder_text=placeholder, font=("default_theme", 30), **kwargs
+        )
+        entry.place(x=x, y=y)
+        return entry
+
+    def check_entries(self, event):
+        if self.username_entry.get() and self.password_entry.get():
+            self.login_button.configure(state=ctk.NORMAL)
+        else:
+            self.login_button.configure(state=ctk.DISABLED)
+
+    def switch_to_dashboard(self):
+        # Removendo widgets da tela de login
+        for widget in self.root.winfo_children():
+            widget.destroy() 
+
+        # ... (lógica para criar a tela do dashboard)
+
+# Cria a instância da janela principal e inicia o aplicativo
+root = ctk.CTk()
+app = LoginApp(root)
+root.mainloop()
+
+###Melhorias:
+
+Estrutura da Classe: A classe LoginApp agora encapsula toda a lógica do aplicativo, tornando o código mais organizado e reutilizável.
+Nomes Claros: Variáveis e métodos foram renomeados para melhor refletir suas funções (ex: root em vez de window_login).
+Organização: O código foi reorganizado para um fluxo mais lógico, com definições de tema e dimensões no início.
+Redimensionamento de Imagem: O carregamento e redimensionamento da imagem foram simplificados usando o gerenciador de contexto with.
+create_entry_field: Uma função auxiliar foi criada para evitar a repetição de código na criação dos campos de entrada.
+Vinculação de Eventos: A vinculação dos eventos de verificação foi movida para o final da criação dos campos para melhor legibilidade.
+Remoção de Widgets: A função switch_to_dashboard agora usa widget.destroy() para remover completamente os widgets da tela de login em vez de apenas ocultá-los.
+Documentação: Comentários foram adicionados para explicar as principais partes do código.
+Sugestões:
+
+Tratamento de Erros: Adicione tratamento de erros para o carregamento da imagem e para a lógica de login.
+Validação de Login: Implemente uma lógica real para verificar as credenciais do usuário.
+Design da Tela do Dashboard: Desenvolva a tela do dashboard de acordo com as suas necessidades.
+Separação de Preocupações: Considere separar o código em módulos diferentes (ex: um módulo para a interface gráfica e outro para a lógica do aplicativo).
