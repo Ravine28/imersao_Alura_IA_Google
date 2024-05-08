@@ -9,7 +9,7 @@
 ### 👉 [Solução desafio #1](https://github.com/Ravine28/imersao_Alura_IA_Google/blob/main/aula01-desafio01)
 ### 🧩 Desafio 2: Anexar o meu histórico de navegação, utilizando-o como dataset, a um prompt do Gemini solicitando sua analise
 ### 💡 Solução: Soliciei ao Gemini que retornasse uma tabela de análise dos dados do meu histórico de navegação do Chrome com uma conclusão ao final.
-###
+### 👉 [Solução desafio #2](https://github.com/Ravine28/imersao_Alura_IA_Google/blob/main/aula01-desafio02)
 
 ## 🧠 Dia 2: Melhores técnicas em Engenharia de Prompt (07 de maio)
 ### 🧩 Desafio:
