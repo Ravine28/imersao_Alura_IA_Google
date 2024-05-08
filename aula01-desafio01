@@ -73,10 +73,10 @@ class Login():
         label_entry.place(x=-45, y=15)
         
 
-# Cria uma instância da janela principal
+Cria uma instância da janela principal
 window_login = ctk.CTk()
 
-# Cria uma instância da classe Login
+Cria uma instância da classe Login
 app = Login()
 
 
