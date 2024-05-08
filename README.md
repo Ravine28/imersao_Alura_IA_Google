@@ -15,9 +15,9 @@
 ### 🧩 Desafio: Usar a técnica de Few-shot Chain-of-Thought para um problema da sua vida real
 ### 💡 Solução: Uso do Google AI Studio para solicitar que o chatbot me retorne uma resposta na mesma linha da que dei como exemplo, só que utilizando outra linguagem
 ### 👉 [Solução desafio #1](https://github.com/Ravine28/imersao_Alura_IA_Google/blob/main/aula02-desafio01)
-### 🧩 Desafio:
-### 💡 Solução:
-### 👉
+### 🧩 Desafio: Escolha 10 textos do seu site de notícias preferido. Apresente para o Google AI Studio o padrão dos títulos e das suas respectivas notícias e quando chegar no décimo primeiro texto, apresente somente a notícia e peça para ele gerar um título. Veja se existe alguma técnica ou padrão
+### 💡 Solução: Selecionei 11 matérias do site da BBC em que 10 delas eu coloquei título e texto no prompt e solicitei que com base no padrão identificado, o chatbot desse um título para o texto de numero 11.
+### 👉 [Solução desafio #2](https://github.com/Ravine28/imersao_Alura_IA_Google/blob/main/aula02-desafio02)
 
 ## ⚙️ Dia 3: Explorando os parâmetros do Google AI Studio (08 de maio)
 ### 🧩 Desafio:
