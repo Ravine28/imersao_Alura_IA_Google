@@ -1,0 +1,97 @@
+PROMPT
+Pergunta: 
+Haja como um professor de algoritmo que ministra aulas no primeiro período de ciências da computação e explique passo a passo a lógica de um algoritmo que calcula 
+fatoriais na linguagem C
+
+Resposta: 
+Primeiro, vamos entender o que é um fatorial. Um fatorial de um número inteiro positivo n, denotado por n!, é o produto de todos os inteiros positivos menores ou 
+iguais a n. Por exemplo:5!=5×4×3×2×1=120. Agora, vamos construir um algoritmo em C para calcular o fatorial de um número fornecido pelo usuário. 
+Aqui está o passo a passo:
+Incluir bibliotecas: Precisamos incluir a biblioteca padrão de entrada e saída de dados em C.
+Definir a função principal (main): Toda execução em C começa na função main.
+Declarar variáveis: Vamos declarar uma variável inteira para armazenar o número fornecido pelo usuário e uma variável para armazenar o resultado do fatorial.
+Solicitar entrada do usuário: Vamos pedir ao usuário que insira o número inteiro do qual ele deseja calcular o fatorial.
+Calcular o fatorial: Vamos usar um loop para calcular o fatorial do número fornecido pelo usuário.
+Exibir o resultado: Finalmente, vamos exibir o resultado na tela.
+O código segue abaixo:
+
+#include <stdio.h>
+
+int main() {
+    int num, i;
+    unsigned long long factorial = 1;
+
+    // Solicitar entrada do usuário
+    printf("Digite um número inteiro positivo: ");
+    scanf("%d", &num);
+
+    // Calcular o fatorial
+    for (i = 1; i <= num; ++i) {
+        factorial *= i;
+    }
+
+    // Exibir o resultado
+    printf("O fatorial de %d é %llu.\n", num, factorial);
+    
+    return 0;
+}
+
+
+
+Pergunta: 
+Haja como um professor de algoritmo que ministra aulas no primeiro período de ciências da computação e explique passo a passo a lógica de um algoritmo que calcula fatoriais
+na linguagem Python
+
+Resposta:
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+RESPOSTA
+Calculando Fatoriais em Python: Um Guia Passo a Passo
+Olá, futuros cientistas da computação! Hoje vamos explorar o fascinante mundo dos fatoriais e como calculá-los usando a linguagem Python.
+Entendendo o Fatorial:
+Antes de mergulharmos no código, vamos relembrar o que é um fatorial. O fatorial de um número inteiro positivo n, representado por n!, é o produto de todos os inteiros 
+positivos menores ou iguais a n. Por exemplo, 5! (lê-se "5 fatorial") é 5 x 4 x 3 x 2 x 1, resultando em 120.
+Construindo o Algoritmo em Python:
+Importando Bibliotecas: Ao contrário de C, Python não requer a inclusão explícita de bibliotecas para entrada e saída básica. Então, podemos pular esta etapa.
+Definindo a Função Principal: Em Python, não temos uma função main obrigatória. Podemos escrever nosso código diretamente no arquivo.
+Obtendo Entrada do Usuário: Vamos usar a função input() para solicitar ao usuário que digite um número inteiro:
+num = int(input("Digite um número inteiro positivo: "))
+
+Validando a Entrada: É importante garantir que o usuário insira um número válido (positivo). Podemos usar uma estrutura condicional para isso:
+if num < 0:
+    print("Erro: O número deve ser positivo.")
+else:
+    
+# Cálculo do fatorial
+Calculando o Fatorial: Existem duas maneiras comuns de calcular o fatorial em Python:
+Usando um loop for:
+factorial = 1
+for i in range(1, num + 1):
+    factorial *= i
+
+Usando Recursão:
+def fatorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * fatorial(n-1)
+
+factorial = fatorial(num)
+
+Exibindo o Resultado: Finalmente, vamos mostrar o resultado para o usuário:
+print("O fatorial de", num, "é", factorial)
+
+Código Completo:
+num = int(input("Digite um número inteiro positivo: "))
+
+if num < 0:
+    print("Erro: O número deve ser positivo.")
+else:
+    factorial = 1
+    for i in range(1, num + 1):
+        factorial *= i
+    print("O fatorial de", num, "é", factorial)
+
+Conclusão:
+Aí está! Agora você sabe como calcular o fatorial de um número em Python. Você pode escolher entre o loop for ou a abordagem recursiva, dependendo de sua preferência 
+e do contexto do problema.
