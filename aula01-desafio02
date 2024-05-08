@@ -2,13 +2,13 @@ PROMPT criado para uso no Gemini:
 Tire conclusões de como tenho usado o seu tempo, criando um resumo em tabela do que mais acesso, quantidade de uso e tipo de site. Ao final quero uma conclusão com o 
 tempo total de uso do Chrome. E por fim analise o que os dados gerados para a tabela querem dizer sobre o perfil do usuário e seus interesses.
 
-domain_type	    | total_time_hours | total_visits
+domain_type    | total_time_hours | total_visits
 -------------------------------------------------
 Outros	           |  -769.167         |	361
 Desenvolvimento	   |  -805.556	       |  2681
 Social	           |  -148.278	       |  11200
 Pesquisa           |  -185.306         | 	499
-Comunicação	    |  -228.444        |	4871
+Comunicação    |  -228.444        |	4871
 
 Analisando a tabela, podemos inferir que o usuário tem os seguintes interesses e comportamentos:
 Interesse em desenvolvimento: O usuário demonstra um interesse significativo em desenvolvimento, com um número alto de visitas a sites relacionados a essa área (2681 visitas). 
