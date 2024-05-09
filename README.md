@@ -31,12 +31,8 @@
 ### 👉 [Solução desafio #3](https://github.com/Ravine28/imersao_Alura_IA_Google/blob/main/aula03-desafio03.ipynb)
 
 ## 💬 Dia 4: Criando seu próprio chatbot com a Gemini API no Google Colab (09 de maio)
-### 🧩 Desafio 1:
-### 💡 Solução:
-### 👉 [Solução desafio #1]()
-### 🧩 Desafio 2:
-### 💡 Solução:
-### 👉 [Solução desafio #2]()
+### 🧩 Desafio 1: Criar um chatbot utilizando a API do Google
+### 👉 [Solução desafio #1](https://github.com/Ravine28/imersao_Alura_IA_Google/blob/main/aula04-desafio01.ipynb)
 
 ## 🔍 Dia 5: Criando um sistema para busca em documentos usando embeddings e a Gemini API (10 de maio)
 ### 🧩 Desafio 1:
