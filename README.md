@@ -35,9 +35,7 @@
 ### 👉 [Solução desafio #1](https://github.com/Ravine28/imersao_Alura_IA_Google/blob/main/aula04-desafio01.ipynb)
 
 ## 🔍 Dia 5: Criando um sistema para busca em documentos usando embeddings e a Gemini API (10 de maio)
-### 🧩 Desafio 1:
-### 💡 Solução:
-### 👉 [Solução desafio #1]()
-### 🧩 Desafio 2:
-### 💡 Solução:
-### 👉 [Solução desafio #2]()
+### 🧩 Desafio 1: Fazer uma LLM (Large Language Model) para acessar documentos; Criar um embedding pelo Google Colab.
+### 💡 Solução: Solicitei que o chatbot assumisse a persona de um professor dando uma palestra sobre uma ave aos alunos de biologia.
+### 👉 [Solução desafio #1](https://github.com/Ravine28/imersao_Alura_IA_Google/blob/main/chatbot_embbendings.ipynb)
+
